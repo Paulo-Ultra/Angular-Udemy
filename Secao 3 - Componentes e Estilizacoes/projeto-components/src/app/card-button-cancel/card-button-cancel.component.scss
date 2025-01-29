@@ -1,10 +1,13 @@
+@import "variables";
+
+//O import com caminho absoluto não funciona nas versões do Angular 17+
 
 .card-button-cancel {
   font-size: 16px;
   text-align: center;
   margin-top: 10px;
   border-radius: 25px;
-  background-color: rgb(17, 135, 204);
+  background-color: $bgColor;
   cursor: pointer;
   font-weight: bold;
   padding: 10px;
