@@ -17,6 +17,6 @@
 
 }
 
-div.card-button-cancel {
-  background-color: rgb(204, 17, 64);
+::ng-deep .button-cancel .card-button-cancel {
+  background-color: rgb(204, 17, 64) !important;
 }
