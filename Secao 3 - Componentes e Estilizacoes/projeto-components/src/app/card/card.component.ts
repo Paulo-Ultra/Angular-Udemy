@@ -13,9 +13,8 @@ interface IInfos {
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  //Faz com que a classe não esteja encapsulada e as configs de css ficam como globais
-  //Isso não é usado normalmente
-  encapsulation: ViewEncapsulation.None
+  //É o default
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class CardComponent {
 
