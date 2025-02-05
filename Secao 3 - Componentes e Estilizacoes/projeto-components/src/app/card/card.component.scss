@@ -25,3 +25,7 @@
 :host ::ng-deep mat-slider .mdc-slider__track--active_fill {
   border-color: yellow !important;
 }
+
+::ng-deep .global{
+  background-color: red;
+}
