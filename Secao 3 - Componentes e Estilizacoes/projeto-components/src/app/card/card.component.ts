@@ -14,7 +14,7 @@ interface IInfos {
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
   //É o default
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CardComponent {
 
