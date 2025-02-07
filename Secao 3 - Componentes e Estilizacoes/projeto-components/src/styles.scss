@@ -3,3 +3,12 @@
 //.card-button-cancel {
 //  background-color: forestgreen;
 //}
+
+//Não é uma boa prática colocar o atributo que é gerado pelo angular
+//mat-slider[_ngcontent-ng-c1914633156] .mdc-slider__track--active_fill {
+//  border-color: yellow !important;
+//}
+
+mat-slider.custom-slider .mdc-slider__track--active_fill {
+  border-color: chocolate;
+}

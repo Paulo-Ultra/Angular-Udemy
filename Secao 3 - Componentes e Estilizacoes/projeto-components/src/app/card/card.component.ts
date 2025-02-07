@@ -13,8 +13,6 @@ interface IInfos {
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
-  //É o default
-  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CardComponent {
 
