@@ -8,14 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   inputText: string = 'Texto Inicial';
   inputType = "text";
-  isDesabled = false;
+  isDisabled = false;
 
   enableInput() {
-    this.isDesabled = false;
+    this.isDisabled = false;
   }
 
   disableInput() {
-    this.isDesabled = true;
+    this.isDisabled = true;
   }
 
   setPasswordTypeInput() {
@@ -28,5 +28,18 @@ export class AppComponent {
 
   logInputText() {
     console.log(this.inputText);
+  }
+
+  handleInputKeyup(event: KeyboardEvent) {
+    //valor pego da interface que é tipagem correta e fazendo um casting dessa propriedade
+    //Os valores das propriedades ficam na propriedade target
+    const currentText = (event.target as HTMLInputElement).value;
+    console.log(currentText);
+  }
+
+  handleInputEvent(event: Event) {
+    const currentText = (event.target as HTMLInputElement).value;
+    console.log(currentText);
+    //https://v17.angular.io/guide/event-binding-concepts
   }
 }

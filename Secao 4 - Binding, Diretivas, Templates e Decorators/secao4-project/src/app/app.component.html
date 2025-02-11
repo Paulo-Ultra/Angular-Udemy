@@ -1,4 +1,8 @@
-<input id="meu-input" [value]="inputText" [type]="inputType" [disabled]="isDesabled">
+<input id="meu-input"
+      [value]="inputText"
+      [type]="inputType"
+      [disabled]="isDisabled"
+      (input)="handleInputEvent($event)">
 <br />
 <button (click)="enableInput()" >Habilitar</button>
 <button (click)="disableInput()">Desabilitar</button>
