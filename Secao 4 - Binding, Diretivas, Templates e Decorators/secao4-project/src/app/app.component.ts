@@ -7,11 +7,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    buttonTitle = 'Título do botão';
-    buttonDisable = true;
+  widthButton1 = '110px';
+  widthButton2 = 130;
+  stylesObj = {
+    width: '160px',
+    backgroundColor: 'green'
+  }
 
-    onButtonClick() {
-      this.buttonTitle = 'Título Alterado';
-      this.buttonDisable = !this.buttonDisable;
+  updateStyleObj() {
+    this.stylesObj.width = '170px';
+    this.stylesObj.backgroundColor = 'grey';
+  }
+
+  updateStyleObjCorrect() {
+    this.stylesObj = {
+      width: '170px',
+      backgroundColor: 'grey'
     }
+  }
+
+  updateWidth() {
+    this.widthButton2 = 200;
+  }
 }
