@@ -11,4 +11,7 @@ export class CardComponent {
   //Required é do angular 16+
   @Input({ required: true, alias: 'planPriceAlias' }) planPrice: number = 0;
 
+  buttonClicked(valueEmmited: boolean){
+    console.log('ButtonClicked', valueEmmited);
+  }
 }
