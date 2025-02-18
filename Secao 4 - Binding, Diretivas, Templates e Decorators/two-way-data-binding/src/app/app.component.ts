@@ -6,11 +6,37 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  name: string = 'Paulo';
+  minhaProp = true;
+  pessoa = {
+    name: undefined,
+    status: 1,
+  }
 
-//  Sem usar o two-way-data-binding
-//  handleInputChange(event: any){
-//    console.log(event);
-//    this.name = event;
-//  }
+  toggleProp() {
+    this.minhaProp = !this.minhaProp;
+  }
+
+  isTruthy(){
+    //return {};
+    //return [];
+    //return true;
+    //return 1;
+    //return "teste";
+    //return 'teste';
+    //return "0";
+    //return "false";
+    return this.pessoa.status;
+  }
+
+  isFalsy(){
+    //return false;
+    //return 0;
+    //return "";
+    //return '';
+    //return null;
+    //return undefined;
+    //return -0;
+    //return NaN;
+    return this.pessoa.name;
+  }
 }

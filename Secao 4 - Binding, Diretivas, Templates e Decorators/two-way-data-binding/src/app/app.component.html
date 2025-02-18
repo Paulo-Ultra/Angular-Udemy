@@ -1,9 +1,25 @@
-<h1>Nome</h1>
-<input
-type="text"
-[(ngModel)]="name">
+<!-- <usando o *ngIf ele retira o elemento do dom ao retonar falso -->
+<!--<div style="background-color: green;" *ngIf="false; else meuTemplate">Sou uma div</div>
 
-<h1>Nome digitado: {{ name }}</h1>
+<ng-template #meuTemplate>
+  <div style="background-color: red;">Sou uma outra div</div>
+</ng-template> -->
 
-<!--[ngModel]="name"
-(ngModelChange)="handleInputChange($event)"-->
+<!-- <ng-container *ngIf="minhaProp; then meuTemplate; else meuOutroTempleate"></ng-container>
+
+<ng-template #meuTemplate>
+  <div style="background-color: blue;">Sou a div then</div>
+</ng-template>
+
+<ng-template #meuOutroTempleate>
+  <div style="background-color: pink;">Sou a div else</div>
+</ng-template>
+
+<button (click)="toggleProp()">Toggle</button> -->
+
+<div id="minha-div" style="display: none;">Sou uma div escondida</div>
+
+<!--No visibility hidden ele renderiza a div ou o que ele estiver dentro-->
+<div id="minha-div2" style="visibility: hidden;">Sou uma div escondida 2</div>
+
+
