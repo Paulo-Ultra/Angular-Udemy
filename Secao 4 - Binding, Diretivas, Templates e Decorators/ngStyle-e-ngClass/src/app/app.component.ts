@@ -6,8 +6,20 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  isGreen: boolean = true;
 
-  fontSize: number = 15;
+  setToGreen() {
+    this.isGreen = true;
+  }
+
+  setToOrange() {
+    this.isGreen = false;
+  }
+}
+
+
+
+ /* fontSize: number = 15;
   textColor: 'black' | 'orange' = 'black'
   buttonText: 'Branco' | 'Laranja' = 'Laranja';
   stylesString: string = 'font-size: 15px; color: black';
@@ -42,4 +54,4 @@ export class AppComponent {
       'color': this.textColor,
     }
   }
-}
+}*/

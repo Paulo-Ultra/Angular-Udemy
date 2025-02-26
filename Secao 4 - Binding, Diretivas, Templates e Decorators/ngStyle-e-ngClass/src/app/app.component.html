@@ -1,4 +1,4 @@
-<h1 [ngStyle]="stylesObj">Sou um H1 !!!</h1>
+<!--<h1 [ngStyle]="stylesObj">Sou um H1 !!!</h1>
 
 <h1
   [style.font-size.px]="fontSize"
@@ -10,4 +10,42 @@
 >Sou um H1 3!!!</h1>
 
 <button (click)="increaseFontSize()">+A</button>
-<button (click)="toogleFontColor()">{{ buttonText }}</button>
+<button (click)="toogleFontColor()">{{ buttonText }}</button> -->
+
+<h1 [ngClass]="{
+  'is-big is-green': isGreen,
+  'is-orange': !isGreen,
+}"
+
+>Sou um H1 !!!</h1>
+
+<!--O class sem o ng não aceita duas classes juntas como acima-->
+<h1 [class]="{
+  'is-green': isGreen,
+  'is-orange': !isGreen,
+}"
+
+>Sou um H1 2!!!</h1>
+
+<button (click)="setToGreen()">Verde</button>
+<button (click)="setToOrange()">Laranja</button>
+
+<!--Strings-->
+<h1 [ngClass]="'is-big is-green'">Sou um H1 !!!</h1>
+<h1 [class]="'is-big is-green'">Sou um H1 !!!</h1>
+
+<!--Arrays-->
+<h1 [ngClass]="['is-big', 'is-green']">Sou um H1 !!!</h1>
+<h1 [class]="['is-big', 'is-green']">Sou um H1 !!!</h1>
+
+<!--Objetos-->
+<h1 [ngClass]="{'is-green': isGreen, 'is-orange':!isGreen}">Sou um H1 !!!</h1>
+<h1 [class]="{'is-green': isGreen, 'is-orange':!isGreen}">Sou um H1 !!!</h1>
+
+<!--Diferença com ngClass-->
+<h1 [ngClass]="{'is-big is-green': isGreen, 'is-orange':!isGreen}">Sou um H1 !!!</h1>
+<h1 [class]="{'is-green': isGreen, 'is-orange':!isGreen}">Sou um H1 !!!</h1>
+
+<!--Diferença com ngClass especificando uma classe-->
+<h1 [ngClass]="{'is-green': isGreen,}">Sou um H1 !!!</h1>
+<h1 [class.is-green]="isGreen">Sou um H1 !!!</h1>
