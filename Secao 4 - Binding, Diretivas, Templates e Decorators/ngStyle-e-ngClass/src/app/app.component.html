@@ -1,0 +1,13 @@
+<h1 [ngStyle]="stylesObj">Sou um H1 !!!</h1>
+
+<h1
+  [style.font-size.px]="fontSize"
+  [style.color]="textColor"
+  >Sou um H1 2!!!</h1>
+
+<h1
+  [style]="stylesString"
+>Sou um H1 3!!!</h1>
+
+<button (click)="increaseFontSize()">+A</button>
+<button (click)="toogleFontColor()">{{ buttonText }}</button>
