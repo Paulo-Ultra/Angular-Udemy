@@ -6,8 +6,6 @@ import { AngularMaterialModule } from "../angular-material/angular-material.modu
   imports: [
     AngularMaterialModule,
   ],
-  exports: [
-    AngularMaterialModule
-  ],
+  exports: [],
 })
 export class ComponentsModule {}
