@@ -80,6 +80,21 @@ server.patch('/users/:id', (request, response) => {
     }
 });
 
+server.put('/users/:id', (request, response) => {
+    const id = +request.params.id;
+    const newUser = request.body;
+
+    const index = users.findIndex(user => user.id === id);
+
+    if(index >= 0) {
+        users[index] = newUser;
+
+        return response.status(200).send(users[index]);
+    } else {
+        return response.status(404).send({message: 'Usuário não encontrado.'});
+    }
+});
+
 server.get('/', (request, response) => {
     response.setHeader('Content-Type', 'text/html; charset=UTF-8');
     response.sendFile('page.html', { root: __dirname });
