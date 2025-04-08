@@ -6,13 +6,22 @@
             const xhr = new XMLHttpRequest();
 
             //xhr.open('GET', 'http://localhost:3000/users');
-            xhr.open('GET', 'http://localhost:3000/users/0');
+            //xhr.open('GET', 'http://localhost:3000/users/0');
+            xhr.open('POST', 'http://localhost:3000/users');
+
+            xhr.setRequestHeader('Content-Type', 'application/json')
 
             xhr.onload = () => {
                 console.log(xhr.response);
             };
 
-            xhr.send();
+            const user = {
+                id: 2,
+                name: 'Felipe',
+                age: 29
+            };    
+
+            xhr.send(JSON.stringify(user));
         </script>
         <h2>Teste HTTP Request!</h2>
     </body>

@@ -4,6 +4,7 @@ const cors = require('cors');
 const server = express();
 
 server.use(cors());
+server.use(express.json());
 
 server.listen(3000);
 
@@ -32,6 +33,14 @@ server.get('/users/:id', (request, response) => {
         response.status(404).send('Usuário não encontrado.');
     }    
 });
+
+server.post('/users', (request, response) => {
+    console.log(request.body);
+    
+    users.push(request.body);
+
+    response.status(201).send(users);
+})
 
 server.get('/', (request, response) => {
     response.setHeader('Content-Type', 'text/html; charset=UTF-8');
