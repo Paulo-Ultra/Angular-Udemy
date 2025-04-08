@@ -13,7 +13,12 @@ const users = [
         id: 0,
         name: 'Paulo',
         age: 38
-    }
+    },
+    {
+        id: 1,
+        name: 'Ricardo',
+        age: 39
+    },
 ];
 
 server.get('/users', (request, response) => {
@@ -30,7 +35,7 @@ server.get('/users/:id', (request, response) => {
     if(user) {
         response.status(200).send(user);
     } else {
-        response.status(404).send('Usuário não encontrado.');
+        response.status(404).send({message: 'Usuário não encontrado.'});
     }    
 });
 
@@ -40,6 +45,22 @@ server.post('/users', (request, response) => {
     users.push(request.body);
 
     response.status(201).send(users);
+});
+
+server.delete('/users/:id', (request, response) => {
+    const id = request.params.id;
+
+    const index = users.findIndex(user => user.id === +id);
+
+    if(index >= 0) {
+        const user = users[index];
+
+        users.splice(index, 1);
+  
+        return response.status(200).send(user);
+    } else {
+        return response.status(404).send({message: 'Usuário não encontrado.'});
+    }
 })
 
 server.get('/', (request, response) => {
