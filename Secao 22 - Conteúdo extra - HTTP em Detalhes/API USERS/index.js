@@ -27,9 +27,9 @@ server.get('/users', (request, response) => {
 });
 
 server.get('/users/:id', (request, response) => {
-    const userId = request.params.id;
-    const user = users.find(user => user.id.toString() === userId);
-    // const user = users.find(user => user.id === +userId); -> Outra solução, mudar o tipo para number
+    const userId = +request.params.id;
+    //const user = users.find(user => user.id.toString() === userId);
+    const user = users.find(user => user.id === userId); // Outra solução, mudar o tipo para number
 
 
     if(user) {
@@ -48,9 +48,9 @@ server.post('/users', (request, response) => {
 });
 
 server.delete('/users/:id', (request, response) => {
-    const id = request.params.id;
+    const id = +request.params.id;
 
-    const index = users.findIndex(user => user.id === +id);
+    const index = users.findIndex(user => user.id === id);
 
     if(index >= 0) {
         const user = users[index];
@@ -61,7 +61,24 @@ server.delete('/users/:id', (request, response) => {
     } else {
         return response.status(404).send({message: 'Usuário não encontrado.'});
     }
-})
+});
+
+server.patch('/users/:id', (request, response) => {
+    const id = +request.params.id;
+    const props = request.body;
+
+    const index = users.findIndex(user => user.id === id);
+
+    if(index >= 0) {
+        const user = users[index];
+
+        users[index] = { ...user, ...props };
+
+        return response.status(200).send(users[index]);
+    } else {
+        return response.status(404).send({message: 'Usuário não encontrado.'});
+    }
+});
 
 server.get('/', (request, response) => {
     response.setHeader('Content-Type', 'text/html; charset=UTF-8');
