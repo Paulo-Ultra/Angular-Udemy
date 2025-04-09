@@ -8,11 +8,11 @@ xhr.onload = () => {
 
 xhr.onreadystatechange = () => {
     console.log(xhr.readyState);
-    if(xhr.readyState === 4 & xhr.status === 200){
+    if(xhr.readyState === 4 && xhr.status === 200){
         console.log(JSON.parse(xhr.response));
         console.log(xhr.getAllResponseHeaders());
         console.log(xhr.getResponseHeader('content-type'));
     }
 };
 
-xhr.send();
+//xhr.send();
