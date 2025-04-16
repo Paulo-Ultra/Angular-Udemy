@@ -17,7 +17,7 @@ const queryParams = new URLSearchParams({
     age: 30
 });
 
-fetch('http://localhost:3000/users/10?' + queryParams, {
+/*fetch('http://localhost:3000/users/10?' + queryParams, {
     method: 'GET',
     headers: {
         Teste: 'Teste'
@@ -25,4 +25,4 @@ fetch('http://localhost:3000/users/10?' + queryParams, {
 })
 .then(response => response.json())
 .then(res => console.log('Sucesso =>', res))
-.catch(error => console.log('Error =>',error));
+.catch(error => console.log('Error =>',error));*/
